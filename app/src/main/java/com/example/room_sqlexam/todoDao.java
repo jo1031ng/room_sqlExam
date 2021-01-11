@@ -1,5 +1,6 @@
 package com.example.room_sqlexam;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -11,7 +12,7 @@ import java.util.List;
 @Dao
 public interface todoDao {
     @Query("SELECT * FROM todo")
-    List<todo> getAll();
+    LiveData<List<todo>> getAll();
 
     @Insert
     void insert(todo to);
